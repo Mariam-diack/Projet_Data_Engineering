@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ScalaCompilerConfiguration">
+    <profile name="sbt 1" modules="ecommerceanalytics_3363,ecommerceanalytics_3363.main,ecommerceanalytics_3363.test" />
+  </component>
+</project>

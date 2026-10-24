@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ScalaSbtSettings">
+    <option name="linkedExternalProjectsSettings">
+      <SbtProjectSettings>
+        <option name="converterVersion" value="2" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="D:\MASTER_IA_DIT\Semestre_2\Data Engineering\Projet_DE\EcommerceAnalytics" />
+            <option value="D:\MASTER_IA_DIT\Semestre_2\Data Engineering\Projet_DE\EcommerceAnalytics\project" />
+          </set>
+        </option>
+        <option name="sbtVersion" value="2.0.9" />
+      </SbtProjectSettings>
+    </option>
+  </component>
+</project>
