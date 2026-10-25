@@ -2,7 +2,7 @@
 
 ## Membres de l'équipe & Rôles
 
-### Membre A git add .
+### Membre A
 (Référent)
 * **Nom :** DIACK
 * **Prénom :** Mariam Bocar

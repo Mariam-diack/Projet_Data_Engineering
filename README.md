@@ -1,12 +1,4 @@
-#### 'Ce projet vise à tester et à mettre à l'epreuve les 
-###  competences acquises lors de la 
-###  formation en data enginering.
-###  Il est reparti en trois parties
-###  Partie 1: Mariam Bocar DIACK
-###  Partie 2: Coumba Kebe DIAGNE
-###  Partie 3: Mame Diarra Nguissaly DIENG
-### Pour éviter des conflits , nous avons crées
-###  trois branches pour chaque membre et celui-ci'
-### branche pour mariama: mariam-feature
-### branche pour coumba: coumba-feature
-### branche pour diarra: diarra-feature
+- **Prérequis :** installation de Scala, Spark et SBT (versions : Scala 2.13.14, Spark 3.5.1, sbt 1.10.7, JDK 21).
+- **Compilation :** commandes pour compiler et générer le JAR.
+- **Exécution locale :** lancer l'application avec SBT en mode local.
+- **Déploiement :** commande `spark-submit` pour un cluster.
