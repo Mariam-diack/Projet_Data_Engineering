@@ -1,5 +1,9 @@
 package com.ecommerce.analytics
 
-class DataIngestion {
-
+object DataIngestion {
+  def main(args: Array[String]): Unit = {
+    println("==================================================")
+    println("🚀 Pipeline EcommerceAnalytics démarré avec succès !")
+    println("==================================================")
+  }
 }
