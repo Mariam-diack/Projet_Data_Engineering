@@ -49,15 +49,3 @@ J'ai vérifié que le nombre de lignes ne change pas : 138 047 avant et après l
 6. Pour le rang d'une transaction par utilisateur, j'ai pris row_number plutôt que rank, avec l'identifiant de la transaction pour départager deux achats à la même seconde. Chaque transaction a ainsi un rang unique.
 7. Pour le bonus 3.4, le panier moyen d'un utilisateur est la moyenne de toutes ses transactions. Une transaction est suspecte si au moins deux conditions sur quatre sont vraies : montant supérieur de plus de 300 % au panier moyen, période Night, moins de 5 minutes depuis l'achat précédent, paiement en CRYPTO. J'obtiens 3 060 transactions suspectes sur 138 047.
 8. La taille de la fenêtre (7 jours) et le seuil d'activité (5 jours) sont des paramètres de la classe DataTransformation, avec des valeurs par défaut, pour ne rien coder en dur dans les calculs.
-
-### Relectures
-
-Chaque relecture sera notée ici avec le relecteur, la date et les remarques.
-
-Partie 3 (TimeFeatures, DataTransformation), écrite par B, relue par A. Date : [à compléter]. Remarques : [à compléter].
-
-Partie 2 (ingestion, validation, rapport), écrite par A, relue par B. Date : [à compléter]. Remarques : [à compléter].
-
-Partie 4 (Analytics), écrite par C, relue par B. Date : [à compléter]. Remarques : [à compléter].
-
-Partie 5 (SparkOptimizations), écrite par C, relue par A et B. Date : [à compléter]. Remarques : [à compléter].
