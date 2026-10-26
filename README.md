@@ -6,8 +6,8 @@ EcommerceAnalytics est un projet d'analyse de données e-commerce développé en
 
 ## 2. Technologies utilisées
 
-- Scala 2.13.14
-- Apache Spark 3.5.1
+- Scala 2.13.12
+- Apache Spark 4.2.0
 - sbt pour la gestion des dépendances et la compilation
 - Typesafe Config pour la gestion de la configuration
 

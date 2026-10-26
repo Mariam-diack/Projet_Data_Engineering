@@ -8,6 +8,15 @@ Pour ce projet, le groupe a choisi d'utiliser l'approche **Assembly** (via le pl
 2. **Exécutable direct :** En configurant explicitement la `mainClass` dans notre `build.sbt`, l'archive générée est directement exécutable via une simple commande `java -jar`, ce qui simplifie grandement la mise en production et l'intégration continue.
 3. **Résolution des conflits :** Le mécanisme de `assemblyMergeStrategy` nous permet de gérer proprement les doublons de fichiers de ressources ou de métadonnées (comme `application.conf`), assurant la stabilité de l'application à l'exécution.
  
+## Membre A (Data Ingestion et Plateform Engineer)
+
+### Questions traitées 
+
+J'ai traité la partie 1,2 et 7.
+
+## Difficultés rencontrés:
+1. La compatibilité des versions de scala, sbt.
+2. 
 
 ## Membre B (Data Transformation Engineer)
 
