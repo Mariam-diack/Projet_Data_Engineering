@@ -19,50 +19,35 @@ object Main {
     spark.sparkContext.setLogLevel("WARN")
 
     val ingestion = new DataIngestion(spark)
+    val validation = new DataValidation() // classe de nettoyage 🌟
 
-    println("\n" + "="*60)
-    println("=== SPARK : DÉBUT DE L'AFFICHAGE DES DATASETS ===")
-    println("="*60 + "\n")
+    println("\n=========================================")
+    println("=== SPARK : PIPELINE DE VALIDATION ACTIVÉ ===")
+    println("=========================================\n")
 
-    // --- 1. LECTURE DES TRANSACTIONS ---
-    try {
-      val transactions = ingestion.readTransactions()
-      println(s" TRANSACTIONS : ${transactions.count()} lignes trouvées.")
-      transactions.show(5)
-    } catch {
-      case e: Exception => println(s" Erreur [Transactions] : ${e.getMessage}")
-    }
+    // 1. Ingestion + Validation des Transactions
+    val rawTx = ingestion.readTransactions()
+    val validTx = validation.validateTransactions(rawTx) // Filtrage actif
+    println(s"📊 TRANSACTIONS | Brut : ${rawTx.count()} -> Valide : ${validTx.count()}")
+    validTx.show(5)
 
-    // --- 2. LECTURE DES UTILISATEURS ---
-    try {
-      val users = ingestion.readUsers()
-      println(s"\n UTILISATEURS : ${users.count()} lignes trouvées.")
-      users.show(5)
-    } catch {
-      case e: Exception => println(s" Erreur [Utilisateurs] : ${e.getMessage}")
-    }
+    // 2. Ingestion + Validation des Utilisateurs
+    val rawUsers = ingestion.readUsers()
+    val validUsers = validation.validateUsers(rawUsers) // Filtrage actif
+    println(s"\n📊 UTILISATEURS | Brut : ${rawUsers.count()} -> Valide : ${validUsers.count()}")
+    validUsers.show(5)
 
-    // --- 3. LECTURE DES PRODUITS ---
-    try {
-      val products = ingestion.readProducts()
-      println(s"\n PRODUITS : ${products.count()} lignes trouvées.")
-      products.show(5)
-    } catch {
-      case e: Exception => println(s" Erreur [Produits] : ${e.getMessage}")
-    }
+    // 3. Ingestion + Validation des Produits
+    val rawProducts = ingestion.readProducts()
+    val validProducts = validation.validateProducts(rawProducts) // Filtrage actif
+    println(s"\n📊 PRODUITS     | Brut : ${rawProducts.count()} -> Valide : ${validProducts.count()}")
+    validProducts.show(5)
 
-    // --- 4. LECTURE DES COMMERÇANTS ---
-    try {
-      val merchants = ingestion.readMerchants()
-      println(s"\n COMMERÇANTS : ${merchants.count()} lignes trouvées.")
-      merchants.show(5)
-    } catch {
-      case e: Exception => println(s" Erreur [Commerçants] : ${e.getMessage}")
-    }
-
-    println("\n" + "="*60)
-    println("=== SPARK : FIN DE L'AFFICHAGE ===")
-    println("="*60 + "\n")
+    // 4. Ingestion + Validation des Commerçants
+    val rawMerchants = ingestion.readMerchants()
+    val validMerchants = validation.validateMerchants(rawMerchants) // Filtrage actif
+    println(s"\n📊 COMMERÇANTS  | Brut : ${rawMerchants.count()} -> Valide : ${validMerchants.count()}")
+    validMerchants.show(5)
 
     spark.stop()
   }

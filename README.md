@@ -77,7 +77,6 @@ Le JAR est normalement généré dans le dossier `target/scala-2.13/`.
 
 Après avoir généré le JAR :
 
-
 Pour lancer l'application avec SBT :
 ```bash
  sbt "runMain com.ecommerce.analytics.MainApp" 
