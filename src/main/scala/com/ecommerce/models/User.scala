@@ -2,7 +2,7 @@ package com.ecommerce.models
 
 case class User(
                  user_id: String,
-                 age: Option[Int],
+                 age: Option[Long],
                  annual_income: Option[Double],
                  city: String,
                  customer_segment: String,

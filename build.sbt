@@ -2,15 +2,14 @@ name := "EcommerceAnalytics"
 
 version := "1.0"
 
-scalaVersion := "2.13.14"
+scalaVersion := "2.13.13"  // Assurez-vous que la version de Scala correspond aussi
 
 libraryDependencies ++= Seq(
-  // % Provided est obligatoire si vous déployez avec spark-submit sur cluster,
-  // mais vous pouvez le retirer temporairement si vous exécutez uniquement via sbt run en local.
-  "org.apache.spark" %% "spark-core" % "3.5.1" % Provided,
-  "org.apache.spark" %% "spark-sql"  % "3.5.1" % Provided,
+  "org.apache.spark" %% "spark-core" % "4.2.0" % "provided",
+  "org.apache.spark" %% "spark-sql"  % "4.2.0" % "provided",
   "com.typesafe"      % "config"     % "1.4.3"
 )
+
 
 // Configure SBT pour exécuter MainApp par défaut en local
 Compile / mainClass := Some("com.ecommerce.analytics.MainApp")

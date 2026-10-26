@@ -68,21 +68,33 @@ Cette commande lance le point d'entrée configuré dans le projet, si celui-ci e
 ## 7. Génération du JAR
 
 ```bash
-sbt package
+sbt assembly
 ```
 
 Le JAR est normalement généré dans le dossier `target/scala-2.13/`.
 
-## 8. Exécution avec spark-submit
+## 8. Exécution local
 
 Après avoir généré le JAR :
 
+
+Pour lancer l'application avec SBT :
+```bash
+ sbt "runMain com.ecommerce.analytics.MainApp" 
+```
+
+L'application utilise Spark en mode local, configuré avec local[*].
+
+## 9. Déploiement avec spark-submit
+Pour lancer le jar localement:
 ```bash
 spark-submit --class com.ecommerce.analytics.MainApp --master "local[*]" target/scala-2.13/EcommerceAnalytics.jar
 ```
 
-Adapter le nom du JAR et la classe principale à la configuration effective du projet. Cette commande suppose également que Spark est installé et que `spark-submit` est disponible.
-
+Pour un cluster Spark Standalone, adapter la commande suivante à l'environnement de déploiement :
+```bash
+spark-submit --class com.ecommerce.analytics.MainApp --master spark://ADRESSE_DU_MASTER:7077 --deploy-mode client target/scala-2.13/EcommerceAnalytics.jar
+```
 ## 9. Configuration et données
 
 Les paramètres de l'application sont définis dans `src/main/resources/application.conf`. Les fichiers de données sont placés dans le répertoire prévu par la configuration du projet.
